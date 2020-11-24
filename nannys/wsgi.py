@@ -11,10 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-from django.contrib import admin
-from django.urls import include, path
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'nannys.settings')
 
-urlpatterns = [
-    path('polls/', include('polls.urls')),
-    path('admin/', admin.site.urls),
-]
+application = get_wsgi_application()
